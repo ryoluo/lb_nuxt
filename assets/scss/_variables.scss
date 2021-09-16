@@ -1,0 +1,40 @@
+$font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ,
+  Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$josefin: 'Josefin Sans', sans-serif;
+$theme-background: #222;
+$theme-color-green: #0b4941;
+$theme-color-brown: #962d00;
+$theme-color-light-green: #03733a;
+// $theme-gradation-green: linear-gradient(-65deg, #162055, #008537);
+$theme-gradation-green: linear-gradient(-65deg, #16235f, #01913d);
+$theme-gradation-green-opacity: linear-gradient(-65deg, rgb(10, 31, 75), rgb(2, 112, 66));
+$theme-gradation-green-2: linear-gradient(-45deg, #017256, #08332d);
+$theme-gradation-green-2-rotate: linear-gradient(180deg, #017256, #08332d);
+$theme-gradation-blue: linear-gradient(135deg, #245b64, #122746);
+
+$theme-gradation-gray: linear-gradient(135deg, #4d4d4d, #5c5c5c);
+$theme-gradation-gray-2: linear-gradient(135deg, #494949, #393939);
+$theme-gradation-gray-rotate: linear-gradient(-45deg, #353535, #666);
+
+$text-color-header: #fff;
+$text-color-normal: rgba(255, 255, 255, 0.75);
+$text-color-primary: #1e87f0;
+$text-color-success: #32d296;
+$text-color-warning: #fa955a;
+$text-color-danger: #f15684;
+$text-color-muted: #999;
+@mixin pc {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin wider1024 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
