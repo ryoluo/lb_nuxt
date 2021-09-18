@@ -69,6 +69,11 @@ export default {
       },
     }
   },
+  head() {
+    return {
+      meta: [{ hid: 'og:type', property: 'og:type', content: 'website' }],
+    }
+  },
   methods: {
     toggleLang() {
       this.fadein = true

@@ -50,9 +50,11 @@
 </template>
 <script>
 export default {
-  head: {
-    title: 'Works - Lotus Base',
-    link: this.link,
+  head() {
+    return {
+      title: 'Works - Lotus Base',
+      link: this.link,
+    }
   },
   computed: {
     imgDir() {

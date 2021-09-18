@@ -1,4 +1,5 @@
 import favicons from './config/favicons'
+const baseURL = process.env.APP_ENV === 'local' ? 'http://localhost' : 'https://lotus-base.com'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -6,6 +7,8 @@ export default {
   generate: {
     fallback: true,
   },
+
+  publicRuntimeConfig: { baseURL },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -17,18 +20,21 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'theme-color', name: 'theme-color', content: '#222222' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Music, Vietnam, Technology, and Many Good Things. | Ryo Kobayashi official website.',
+      },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Lotus Base' },
-      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:type', property: 'og:type', content: 'article' },
       { hid: 'og:url', property: 'og:url', content: 'https://lotus-base.com' },
       { hid: 'og:title', property: 'og:title', content: 'Lotus Base' },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Music, Vietnam, Technology, and Many Good Things. | Ryo Kobayshi official website.',
+        content: 'Music, Vietnam, Technology, and Many Good Things. | Ryo Kobayashi official website.',
       },
-      { hid: 'og:image', property: 'og:image', content: 'img/ogp/logo-fb.png' },
-      { hid: 'fb:app_id', property: 'fb:app_id', content: '313860199555739' },
+      { hid: 'og:image', property: 'og:image', content: 'https://lotus-base.com/img/ogp/logo-fb.png' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@ryoluo' },
     ],
@@ -72,7 +78,8 @@ export default {
   router: {},
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: { baseURL: 'http://localhost' },
+  axios: { baseURL },
+  http: { baseURL },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

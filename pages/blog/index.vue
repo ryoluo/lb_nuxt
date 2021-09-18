@@ -5,7 +5,7 @@
       <li v-for="post in posts" :key="post.id" class="section">
         <div class="post-item">
           <nuxt-link class="router-link-img" :to="`/blog/${post.id}`">
-            <img class="post-img" :src="[post.path !== null ? post.path : '/img/logo-sumbnail-gradation.png']" alt />
+            <img class="post-img" :src="[post.path ? post.path : '/img/logo-sumbnail-gradation.png']" alt />
           </nuxt-link>
           <nuxt-link :to="`/blog/${post.id}`" class="text">
             <p class="date">
@@ -22,7 +22,7 @@
 <script>
 export default {
   async asyncData({ $http }) {
-    const posts = await $http.$get('http://localhost:8000/api/posts/index')
+    const posts = await $http.$get('/api/posts/index')
     return { posts }
   },
   head: {

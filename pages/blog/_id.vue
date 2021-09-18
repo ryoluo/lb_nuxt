@@ -74,13 +74,28 @@ export default {
       },
       renderer,
     })
-    const post = await $http.$get(`http://localhost:8000/api/posts/${params.id}`)
+    const post = await $http.$get(`/api/posts/${params.id}`)
     post.content = markedInstance(post.content)
     return { post }
   },
   head() {
     return {
-      title: this.post.title + ' - Lotus Base',
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.post.digest,
+        },
+        { hid: 'og:url', property: 'og:url', content: `${this.$config.baseURL}/blog/${this.post.id}` },
+        { hid: 'og:title', property: 'og:title', content: this.title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.post.digest,
+        },
+        { hid: 'og:image', property: 'og:image', content: this.ogImage },
+      ],
     }
   },
   computed: {
@@ -89,6 +104,12 @@ export default {
     },
     next() {
       return 'Next >'
+    },
+    title() {
+      return this.post.title + ' - Lotus Base'
+    },
+    ogImage() {
+      return this.post.path ? `${this.$config.baseURL}${this.post.path}` : `${this.$config.baseURL}/img/ogp/logo-fb.png`
     },
   },
 }
