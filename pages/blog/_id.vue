@@ -80,7 +80,7 @@ export default {
   },
   head() {
     return {
-      title: this.title,
+      title: this.post.title,
       meta: [
         {
           hid: 'description',
@@ -88,7 +88,7 @@ export default {
           content: this.post.digest,
         },
         { hid: 'og:url', property: 'og:url', content: `${this.$config.baseURL}/blog/${this.post.id}` },
-        { hid: 'og:title', property: 'og:title', content: this.title },
+        { hid: 'og:title', property: 'og:title', content: this.post.title },
         {
           hid: 'og:description',
           property: 'og:description',
@@ -104,9 +104,6 @@ export default {
     },
     next() {
       return 'Next >'
-    },
-    title() {
-      return this.post.title + ' - Lotus Base'
     },
     ogImage() {
       return this.post.path ? `${this.$config.baseURL}${this.post.path}` : `${this.$config.baseURL}/img/ogp/logo-fb.png`
