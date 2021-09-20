@@ -1,3 +1,4 @@
+import axios from 'axios'
 import favicons from './config/favicons'
 const isLocal = process.env.APP_ENV === 'local'
 const baseURL = isLocal ? 'http://localhost' : 'https://lotus-base.com'
@@ -7,6 +8,13 @@ export default {
 
   generate: {
     fallback: true,
+    routes() {
+      return axios.get(`${baseURL}/api/posts/index`).then((res) => {
+        return res.data.map((post) => {
+          return `/blog/${post.id}`
+        })
+      })
+    },
   },
 
   publicRuntimeConfig: { baseURL },
@@ -74,6 +82,7 @@ export default {
     '@nuxt/http',
     '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
+    '@nuxtjs/sitemap',
     '@nuxtjs/style-resources',
   ],
 
@@ -85,6 +94,10 @@ export default {
   googleAnalytics: {
     id: 'UA-142986852-1',
     dev: isLocal,
+  },
+  sitemap: {
+    exclude: ['/open/*'],
+    hostname: baseURL,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
