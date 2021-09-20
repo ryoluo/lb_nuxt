@@ -1,5 +1,6 @@
 import favicons from './config/favicons'
-const baseURL = process.env.APP_ENV === 'local' ? 'http://localhost' : 'https://lotus-base.com'
+const isLocal = process.env.APP_ENV === 'local'
+const baseURL = isLocal ? 'http://localhost' : 'https://lotus-base.com'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -72,6 +73,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxt/http',
     '@nuxtjs/axios',
+    '@nuxtjs/google-analytics',
     '@nuxtjs/style-resources',
   ],
 
@@ -80,6 +82,10 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: { baseURL },
   http: { baseURL },
+  googleAnalytics: {
+    id: 'UA-142986852-1',
+    dev: isLocal,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
