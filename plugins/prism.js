@@ -10,5 +10,6 @@ import 'prismjs/components/prism-css'
 import 'prismjs/components/prism-sass'
 import 'prismjs/components/prism-scss'
 import 'prismjs/components/prism-nginx'
+import 'prismjs/components/prism-yaml'
 
 export default Prism
