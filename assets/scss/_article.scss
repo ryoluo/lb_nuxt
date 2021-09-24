@@ -89,7 +89,7 @@ article {
   }
   pre {
     font-family: 'Menlo', 'Monaco', 'Consolas', monospace !important;
-    background-color: #111;
+    background-color: #111 !important;
     overflow-x: scroll;
     padding: 10px 12.5px;
     border-radius: 5px;
@@ -104,8 +104,9 @@ article {
   }
   :not(pre) > code {
     background: #111;
-    padding: 0.15em 7.5px;
+    padding: 0.15em 6px 0.15em 7px;
     border-radius: 3px;
+    border: 1px solid #444;
   }
   blockquote {
     margin: 20px 0 0 0;
