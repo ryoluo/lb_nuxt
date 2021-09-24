@@ -54,7 +54,7 @@ article {
     font-weight: normal;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     margin-bottom: 0;
-    background-color: #2d2d2d;
+    background-color: #111;
     max-width: 80%;
     word-break: break-all !important;
     width: fit-content;
@@ -89,7 +89,7 @@ article {
   }
   pre {
     font-family: 'Menlo', 'Monaco', 'Consolas', monospace !important;
-    background-color: #2d2d2d;
+    background-color: #111;
     overflow-x: scroll;
     padding: 10px 12.5px;
     border-radius: 5px;
@@ -103,19 +103,18 @@ article {
     margin-top: 0 !important;
   }
   :not(pre) > code {
-    background: #303030;
-    padding: 0.15em 7.5px 0.1em;
+    background: #111;
+    padding: 0.15em 7.5px;
     border-radius: 3px;
-    color: #fff;
   }
   blockquote {
     margin: 20px 0 0 0;
     padding: 1px 0 16px 10px;
-    border-left: 7px solid #2d2d2d;
-    color: #aaa;
-    @include pc {
-      border-width: 10px;
-    }
+    border-left: 6px solid #333;
+    color: $text-color-normal;
+    background-color: #111;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
   }
   ul,
   ol {
