@@ -25,5 +25,5 @@ jobs:
               "cd ~/repos/frontend && \
                git checkout . && \
                git pull && \
-               npm install && \
-               npm run generate"
+               nvm exec 14.17.6 npm install && \
+               nvm exec 14.17.6 npm run generate"
