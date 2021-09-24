@@ -22,8 +22,9 @@ jobs:
           ssh-keyscan -p ${SSH_PORT} -H ${SSH_ADDR} > known_hosts
           chmod 600 secret_key
           ssh ${SSH_USER}@${SSH_ADDR} -p ${SSH_PORT} -o UserKnownHostsFile=./known_hosts -i ./secret_key \
-              "cd ~/repos/frontend && \
+              "cd $HOME/repos/frontend && \
                git checkout . && \
                git pull && \
+               . $HOME/.nvm/nvm.sh && \
                nvm exec 14.17.6 npm install && \
                nvm exec 14.17.6 npm run generate"
