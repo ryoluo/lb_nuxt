@@ -1,39 +1,29 @@
-name: deploy
+name: CD
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   deploy:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [14]
+    env:
+      SSH_SECRET: ${{ secrets.SSH_SECRET }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_ADDR: ${{ secrets.SSH_ADDR }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
 
     steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@master
-
-      - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: ${{ matrix.node }}
-          check-latest: true
-
-      - name: Cache node_modules 📦
-        uses: actions/cache@v2.1.4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies 👨🏻‍💻
-        run: npm ci --prefer-offline --no-audit
-
-      - name: Generate static pages
-        run: npm run generate
+      - uses: actions/checkout@v2
+      - name: SSH Deploy
+        run: |
+          echo "${SSH_SECRET}" > ./secret_key
+          ssh-keyscan -p ${SSH_PORT} -H ${SSH_ADDR} > known_hosts
+          chmod 600 secret_key
+          ssh ${SSH_USER}@${SSH_ADDR} -p ${SSH_PORT} -o UserKnownHostsFile=./known_hosts -i ./secret_key \
+              "cd ~/repos/frontend && \
+               git checkout . && \
+               git pull && \
+               npm install && \
+               npm run generate"
