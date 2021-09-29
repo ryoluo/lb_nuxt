@@ -7,6 +7,7 @@ export default {
   target: 'static',
 
   generate: {
+    subFolders: false,
     fallback: true,
     routes() {
       return axios.get(`${baseURL}/api/posts/index`).then((res) => {
