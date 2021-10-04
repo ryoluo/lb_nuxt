@@ -98,7 +98,7 @@ export default {
   sitemap: {
     exclude: ['/open/*'],
     hostname: baseURL,
-    trailingSlack: true,
+    trailingSlash: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
