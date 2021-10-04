@@ -7,7 +7,6 @@ export default {
   target: 'static',
 
   generate: {
-    subFolders: false,
     fallback: true,
     routes() {
       return axios.get(`${baseURL}/api/posts/index`).then((res) => {
@@ -99,6 +98,7 @@ export default {
   sitemap: {
     exclude: ['/open/*'],
     hostname: baseURL,
+    trailingSlack: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
