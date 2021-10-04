@@ -4,7 +4,7 @@
       <div class="link pre">
         <div v-if="post.previous_id" class="nuxt-link">
           {{ prev }}
-          <nuxt-link v-if="post.previous_id" class="nuxt-link-a" :to="`/blog/${post.previous_id}`"></nuxt-link>
+          <nuxt-link v-if="post.previous_id" class="nuxt-link-a" :to="`/blog/${post.previous_id}/`"></nuxt-link>
         </div>
       </div>
       <div class="link home">
@@ -13,7 +13,7 @@
       <div class="link next">
         <div v-if="post.next_id" class="nuxt-link">
           {{ next }}
-          <nuxt-link v-if="post.next_id" class="nuxt-link-a" :to="`/blog/${post.next_id}`"></nuxt-link>
+          <nuxt-link v-if="post.next_id" class="nuxt-link-a" :to="`/blog/${post.next_id}/`"></nuxt-link>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
       <div class="link pre">
         <div v-if="post.previous_id" class="nuxt-link">
           {{ prev }}
-          <nuxt-link v-if="post.previous_id" class="nuxt-link-a" :to="`/blog/${post.previous_id}`"></nuxt-link>
+          <nuxt-link v-if="post.previous_id" class="nuxt-link-a" :to="`/blog/${post.previous_id}/`"></nuxt-link>
         </div>
       </div>
       <div class="link top">
@@ -36,7 +36,7 @@
       <div class="link next">
         <div v-if="post.next_id" class="nuxt-link">
           {{ next }}
-          <nuxt-link v-if="post.next_id" class="nuxt-link-a" :to="`/blog/${post.next_id}`"></nuxt-link>
+          <nuxt-link v-if="post.next_id" class="nuxt-link-a" :to="`/blog/${post.next_id}/`"></nuxt-link>
         </div>
       </div>
     </div>

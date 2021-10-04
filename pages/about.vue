@@ -18,8 +18,8 @@
         </p>
         <p class="message-bottom">
           お問い合わせは
-          <nuxt-link to="/contact">Contact</nuxt-link>&nbsp;もしくは
-          <a href="/open/twitter" target="_blank">Twitter</a>
+          <nuxt-link to="/contact/">Contact</nuxt-link>&nbsp;もしくは
+          <a href="/open/twitter/" target="_blank">Twitter</a>
           からお願いいたします。
         </p>
       </div>

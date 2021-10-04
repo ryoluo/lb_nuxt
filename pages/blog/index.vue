@@ -4,10 +4,10 @@
     <ul class="posts-wrapper">
       <li v-for="post in posts" :key="post.id" class="section">
         <div class="post-item">
-          <nuxt-link class="router-link-img" :to="`/blog/${post.id}`">
+          <nuxt-link class="router-link-img" :to="`/blog/${post.id}/`">
             <img class="post-img" :src="[post.path ? post.path : '/img/logo-sumbnail-gradation.png']" alt />
           </nuxt-link>
-          <nuxt-link :to="`/blog/${post.id}`" class="text">
+          <nuxt-link :to="`/blog/${post.id}/`" class="text">
             <p class="date">
               {{ post.date }}
               <span class="category-name">{{ post.category.name }}</span>

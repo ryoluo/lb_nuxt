@@ -3,31 +3,31 @@
     <nav v-show="showNav" class="nav">
       <ul class="links">
         <li class="link" @click="hideNav">
-          <nuxt-link to="/about" class="text">About</nuxt-link>
+          <nuxt-link to="/about/" class="text">About</nuxt-link>
         </li>
         <li class="link" @click="hideNav">
-          <nuxt-link to="/blog" class="text">Blog</nuxt-link>
+          <nuxt-link to="/blog/" class="text">Blog</nuxt-link>
         </li>
         <li class="link" @click="hideNav">
-          <nuxt-link to="/works" class="text">Works</nuxt-link>
+          <nuxt-link to="/works/" class="text">Works</nuxt-link>
         </li>
         <li class="link" @click="hideNav">
-          <nuxt-link to="/contact" class="text">Contact</nuxt-link>
+          <nuxt-link to="/contact/" class="text">Contact</nuxt-link>
         </li>
       </ul>
       <ul class="icons">
         <li class="icon">
-          <a class="link" href="/open/twitter" target="_blank">
+          <a class="link" href="/open/twitter/" target="_blank">
             <font-awesome-icon class="fab fa-twitter" :icon="['fab', 'twitter']"></font-awesome-icon>
           </a>
         </li>
         <li class="icon">
-          <a class="link" href="/open/instagram" target="_blank">
+          <a class="link" href="/open/instagram/" target="_blank">
             <font-awesome-icon class="fab fa-instagram" :icon="['fab', 'instagram']"></font-awesome-icon>
           </a>
         </li>
         <li class="icon">
-          <a class="link" href="/open/github" target="_blank">
+          <a class="link" href="/open/github/" target="_blank">
             <font-awesome-icon class="fab fa-github" :icon="['fab', 'github']"></font-awesome-icon>
           </a>
         </li>
