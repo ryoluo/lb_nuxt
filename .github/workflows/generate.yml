@@ -1,11 +1,11 @@
-name: deploy
+name: generate
 
 on:
-  push:
-    branches: [master]
+  repository_dispatch:
+    types: [generate]
 
 jobs:
-  deploy:
+  generate:
     runs-on: ubuntu-latest
 
     env:
@@ -16,15 +16,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: SSH Deploy
+      - name: SSH Generate
         run: |
           echo "${SSH_SECRET}" > ./secret_key
           ssh-keyscan -p ${SSH_PORT} -H ${SSH_ADDR} > known_hosts
           chmod 600 secret_key
           ssh ${SSH_USER}@${SSH_ADDR} -p ${SSH_PORT} -o UserKnownHostsFile=./known_hosts -i ./secret_key \
               "cd ~/repos/frontend && \
-               git checkout . && \
-               git pull && \
                . ~/.nvm/nvm.sh && \
-               nvm exec 14.17.6 npm install && \
                nvm exec 14.17.6 npm run generate"
