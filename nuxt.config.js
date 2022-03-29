@@ -47,6 +47,24 @@ export default {
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@ryoluo' },
     ],
+    script: isLocal
+      ? []
+      : [
+          { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-W9KELVBTN2' },
+          {
+            vmid: 'gtag',
+            hid: 'gtag',
+            type: 'text/javascript',
+            innerHTML: `window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-W9KELVBTN2');`,
+          },
+        ],
+    __dangerouslyDisableSanitizersByTagID: {
+      gtag: ['innerHTML'],
+    },
     link: favicons,
   },
 
