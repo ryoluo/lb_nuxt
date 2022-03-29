@@ -82,7 +82,6 @@ export default {
     '@nuxt/http',
     '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/google-gtag',
     '@nuxtjs/sitemap',
     '@nuxtjs/style-resources',
   ],
@@ -95,10 +94,6 @@ export default {
   googleAnalytics: {
     id: 'UA-142986852-1',
     dev: isLocal,
-  },
-  'google-gtag': {
-    id: 'G-W9KELVBTN2',
-    debug: isLocal,
   },
   sitemap: {
     exclude: ['/open/*'],
