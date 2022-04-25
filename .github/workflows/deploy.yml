@@ -26,5 +26,5 @@ jobs:
                git checkout . && \
                git pull && \
                . ~/.nvm/nvm.sh && \
-               nvm exec 14.17.6 npm install && \
+               nvm exec 14.17.6 npm install --production && \
                nvm exec 14.17.6 npm run generate"

@@ -43,11 +43,11 @@
   </div>
 </template>
 <script>
-import marked from 'marked'
+import { marked, Renderer } from 'marked'
 import Prism from '@/plugins/prism'
 export default {
   async asyncData({ params, $http }) {
-    const renderer = new marked.Renderer()
+    const renderer = new Renderer()
     renderer.link = (href, title, text) => `<a target="_blank" href="${href}" title="${href}">${text}</a>`
     // eslint-disable-next-line new-cap
     const markedInstance = new marked.setOptions({
