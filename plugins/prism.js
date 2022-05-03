@@ -11,5 +11,7 @@ import 'prismjs/components/prism-sass'
 import 'prismjs/components/prism-scss'
 import 'prismjs/components/prism-nginx'
 import 'prismjs/components/prism-yaml'
+import 'prismjs/components/prism-docker'
+import 'prismjs/components/prism-typescript'
 
 export default Prism
