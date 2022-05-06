@@ -1,6 +1,6 @@
 import axios from 'axios'
 import head from './config/head'
-import { baseURL, isLocal } from './const'
+import { isLocal, baseURL, proxyURL } from './const'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -61,7 +61,8 @@ export default {
   router: {},
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: { baseURL },
+  axios: { proxy: true },
+  proxy: { '/api/': proxyURL },
   http: { baseURL },
   googleAnalytics: {
     id: 'UA-142986852-1',
