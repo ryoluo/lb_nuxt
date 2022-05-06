@@ -82,7 +82,7 @@ export default {
       this.sending = true
       await this.$axios.$get('/api/token')
       await this.$axios
-        .$post('/api/contact/submit', this.params)
+        .$post('/api/contact', this.params)
         .then((response) => {
           this.hideModal()
           setTimeout(this.makeSendingFalse, 500)
