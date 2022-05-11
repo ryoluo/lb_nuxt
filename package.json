@@ -20,7 +20,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "axios": "^0.26.1",
-    "core-js": "^3.22.0",
+    "core-js": "^3.22.1",
     "fibers": "^5.0.1",
     "hooper": "^0.3.4",
     "marked": "^4.0.14",
