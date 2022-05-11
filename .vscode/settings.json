@@ -14,5 +14,8 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "eslint.options": { "configFile": ".eslintrc.js" }
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  "workbench.colorTheme": "Default Dark+"
 }

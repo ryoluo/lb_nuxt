@@ -1,22 +1,25 @@
 <template>
-  <PostView :post="post" list-path="/blog" />
+  <PostView :post="post" list-path="/blog/en" />
 </template>
 <script>
 export default {
   async asyncData({ params, $http }) {
-    const post = await $http.$get(`/api/posts/${params.id}`)
+    const post = await $http.$get(`/api/posts/en/${params.id}`)
     return { post }
   },
   head() {
     return {
       title: this.post.title,
+      htmlAttrs: {
+        lang: 'en',
+      },
       meta: [
         {
           hid: 'description',
           name: 'description',
           content: this.post.digest,
         },
-        { hid: 'og:url', property: 'og:url', content: `${this.$config.baseURL}/blog/${this.post.id}` },
+        { hid: 'og:url', property: 'og:url', content: `${this.$config.baseURL}/blog/en/${this.post.id}` },
         { hid: 'og:title', property: 'og:title', content: this.post.title },
         {
           hid: 'og:description',

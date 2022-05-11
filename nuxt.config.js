@@ -1,5 +1,5 @@
-import axios from 'axios'
 import head from './config/head'
+import routes from './config/routes'
 import { isLocal, baseURL, proxyURL } from './const'
 
 export default {
@@ -8,13 +8,7 @@ export default {
 
   generate: {
     fallback: true,
-    routes() {
-      return axios.get(`${baseURL}/api/posts/index`).then((res) => {
-        return res.data.map((post) => {
-          return `/blog/${post.id}`
-        })
-      })
-    },
+    routes,
   },
 
   publicRuntimeConfig: { baseURL },
@@ -63,7 +57,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: { proxy: true },
   proxy: { '/api/': proxyURL },
-  http: { baseURL },
+  http: { proxyURL },
   googleAnalytics: {
     id: 'UA-142986852-1',
     dev: isLocal,
