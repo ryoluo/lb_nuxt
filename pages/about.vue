@@ -13,9 +13,7 @@
       </div>
       <div class="message">
         <p class="message-top">ご訪問ありがとうございます。サイト運営者の小林涼と申します。</p>
-        <p>
-          大学在学中にプログラミングを始め、1年半のITエンジニアインターンシップを経験後、現在SAPコンサルタントとして活動中です。
-        </p>
+        <p>某外資系企業にてITエンジニア・コンサルタントとして活動中です。</p>
         <p class="message-bottom">
           お問い合わせは
           <nuxt-link to="/contact/">Contact</nuxt-link>&nbsp;もしくは
@@ -68,7 +66,7 @@
               <br />@Howtelevision, Inc.
             </dd>
             <dt class="dt">2020.08 - Now</dt>
-            <dd class="dd">SAPコンサルタント</dd>
+            <dd class="dd">ITエンジニア・コンサルタント</dd>
           </dl>
         </li>
       </ul>
