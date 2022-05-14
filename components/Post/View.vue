@@ -51,12 +51,15 @@ export default {
       required: true,
       type: Object,
     },
-    listPath: {
+    lang: {
       required: true,
       type: String,
     },
   },
   computed: {
+    listPath() {
+      return this.lang === 'en' ? '/blog/en' : '/blog'
+    },
     parsedContent() {
       const renderer = new Renderer()
       renderer.link = (href, title, text) => `<a target="_blank" href="${href}" title="${href}">${text}</a>`

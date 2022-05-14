@@ -1,5 +1,5 @@
 <template>
-  <PostView :post="post" list-path="/blog/en" />
+  <PostView :post="post" lang="en" />
 </template>
 <script>
 export default {
