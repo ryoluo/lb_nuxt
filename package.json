@@ -24,7 +24,7 @@
     "core-js": "^3.22.0",
     "fibers": "^5.0.1",
     "hooper": "^0.3.4",
-    "marked": "^4.0.14",
+    "marked": "^4.0.15",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.8",
     "prismjs": "^1.27.0",
