@@ -1,6 +1,12 @@
 <template>
   <footer class="footer">
-    <p class="copyright">© 2019-{{ curYear }} Ryo Kobayashi</p>
+    <div class="wrapper">
+      <p class="support">
+        Support me:
+        <a href="bitcoin:bc1qt82nf74gnfa7v3fvr29fm8w85v5mwcqz7nakuf">bc1qt82nf74gnfa7v3fvr29fm8w85v5mwcqz7nakuf</a>
+      </p>
+      <p class="copyright">© 2019-{{ curYear }} Ryo Kobayashi</p>
+    </div>
   </footer>
 </template>
 <script>
@@ -16,19 +22,24 @@ export default {
 <style lang="scss" scoped>
 .footer {
   background-image: $theme-gradation-green;
-  height: 75px;
+  height: 74px;
   width: 100%;
   position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 12px;
+  text-align: center;
+  .wrapper {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .support {
+    margin: 8px 0 0 0;
+  }
   .copyright {
-    font-family: 'Josefin Sans', sans-serif;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    text-align: center;
-    padding-bottom: 10px;
-    font-size: 12px;
+    margin: 0 2px 0 0;
   }
 }
 </style>
