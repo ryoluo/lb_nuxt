@@ -1,11 +1,17 @@
 <template>
-  <PostView :post="post" lang="en" />
+  <PostView :post="post" :count="count" :count-up="countUp" lang="en" />
 </template>
 <script>
 export default {
   async asyncData({ params, $http }) {
     const post = await $http.$get(`/api/posts/en/${params.id}`)
     return { post }
+  },
+  data() {
+    return {
+      count: -1,
+      click: 0,
+    }
   },
   head() {
     return {
@@ -33,6 +39,35 @@ export default {
   computed: {
     ogImage() {
       return this.post.path ? `${this.$config.baseURL}${this.post.path}` : `${this.$config.baseURL}/img/ogp/logo-fb.png`
+    },
+    url() {
+      return `/api/posts/${this.post.id}/good`
+    },
+    param() {
+      return {
+        add: this.click,
+      }
+    },
+  },
+  watch: {
+    async click(newValue) {
+      if (newValue === 0) return
+      await this.$sleep(1000)
+      if (newValue === this.click) {
+        await this.$axios.$post(this.url, this.param)
+        this.click = 0
+      }
+    },
+  },
+  async mounted() {
+    await this.$axios.$get(this.url).then((res) => {
+      this.count = res.count
+    })
+  },
+  methods: {
+    countUp() {
+      this.count++
+      this.click++
     },
   },
 }

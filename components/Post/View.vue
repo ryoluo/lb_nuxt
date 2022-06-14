@@ -23,6 +23,7 @@
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="parsedContent"></div>
     </article>
+    <post-button class="good-btn" :count="count" :count-up="countUp" />
     <div v-if="post" class="blog-nav">
       <div class="link pre">
         <div v-if="post.previous_id" class="nuxt-link">
@@ -50,6 +51,14 @@ export default {
     post: {
       required: true,
       type: Object,
+    },
+    count: {
+      required: true,
+      type: Number,
+    },
+    countUp: {
+      required: true,
+      type: Function,
     },
     lang: {
       required: true,
@@ -87,5 +96,16 @@ export default {
       return 'Next >'
     },
   },
+  methods: {
+    async addGood() {
+      await this.$axios.$post(`/api/posts/${this.post.id}/good`, { add: 1 })
+    },
+  },
 }
 </script>
+<style lang="scss" scoped>
+.good-btn {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+</style>
