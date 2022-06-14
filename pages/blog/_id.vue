@@ -49,7 +49,7 @@ export default {
   watch: {
     async click(newValue) {
       if (newValue === 0) return
-      await this.$sleep(1000)
+      await this.$sleep(500)
       if (newValue === this.click) {
         await this.$axios.$post(this.url, this.param)
         this.click = 0
