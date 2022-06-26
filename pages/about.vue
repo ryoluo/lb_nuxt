@@ -12,8 +12,8 @@
         </div>
       </div>
       <div class="message">
-        <p class="message-top">ご訪問ありがとうございます。サイト運営者の小林涼と申します。</p>
-        <p>某外資系企業にてITエンジニア・コンサルタントとして活動中です。</p>
+        <p class="message-top">ご訪問ありがとうございます。</p>
+        <p>ITエンジニア・コンサルタントとして某コンサルティングファームに所属しております。</p>
         <p class="message-bottom">
           お問い合わせは
           <nuxt-link to="/contact/">Contact</nuxt-link>&nbsp;もしくは
@@ -28,7 +28,8 @@
           <h4 class="title">Languages</h4>
           <p class="detail">
             ベトナム語 / 英語<br />
-            JavaScript / PHP / Go / Python
+            JavaScript (TypeScript)<br />
+            PHP / Go / Python
           </p>
         </li>
         <li class="li">
@@ -37,7 +38,8 @@
             基本情報技術者試験 (2019.04)<br />
             応用情報技術者試験 (2019.10)<br />
             AZ-900: Azure Fundamentals (2020.11)<br />
-            情報処理安全確保支援士試験 (2021.04)
+            情報処理安全確保支援士試験 (2021.04)<br />
+            ネットワークスペシャリスト試験 (2022.04)
           </p>
         </li>
         <li class="li">
