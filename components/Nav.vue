@@ -9,7 +9,7 @@
           <nuxt-link to="/blog/" class="text">Blog</nuxt-link>
         </li>
         <li class="link" @click="hideNav">
-          <nuxt-link to="/works/" class="text">Works</nuxt-link>
+          <nuxt-link to="/diary/" class="text">Diary</nuxt-link>
         </li>
         <li class="link" @click="hideNav">
           <nuxt-link to="/contact/" class="text">Contact</nuxt-link>
