@@ -13,7 +13,7 @@
       </div>
       <div class="message">
         <p class="message-top">ご訪問ありがとうございます。</p>
-        <p>ITエンジニア・コンサルタントとして某コンサルティングファームに所属しております。</p>
+        <p>ITエンジニア・コンサルタントとしてコンサルティングファームに所属しております。</p>
         <p class="message-bottom">
           お問い合わせは
           <nuxt-link to="/contact/">Contact</nuxt-link>&nbsp;もしくは
