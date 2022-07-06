@@ -1,7 +1,7 @@
 <template>
   <div id="diary">
     <h1 class="page-title">Diary</h1>
-    <article>
+    <article v-if="diaries !== []">
       <div v-for="diary in diaries" :key="diary.id" class="diary-item">
         <p class="date">{{ diary.date }}</p>
         <h2 class="title">{{ diary.title }}</h2>
@@ -54,5 +54,8 @@ export default {
 <style lang="scss" scoped>
 .diary-item {
   margin-bottom: 100px;
+  .title::after {
+    display: none;
+  }
 }
 </style>
