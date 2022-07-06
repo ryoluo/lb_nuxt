@@ -1,7 +1,7 @@
 <template>
   <div id="diary">
     <h1 class="page-title">Diary</h1>
-    <article v-if="diaries !== []">
+    <article>
       <div v-for="diary in diaries" :key="diary.id" class="diary-item">
         <p class="date">{{ diary.date }}</p>
         <h2 class="title">{{ diary.title }}</h2>
