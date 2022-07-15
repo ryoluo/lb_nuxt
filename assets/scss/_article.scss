@@ -154,7 +154,7 @@ article {
     }
   }
   img {
-    width: 90%;
+    width: 100%;
     max-width: 700px;
     display: block;
     margin: 25px auto;
@@ -163,7 +163,6 @@ article {
     }
     &.top {
       max-width: 1024px !important;
-      width: 100% !important;
       margin-left: auto !important;
       margin-right: auto !important;
     }
