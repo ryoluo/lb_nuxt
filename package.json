@@ -27,7 +27,7 @@
     "marked": "^4.0.14",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.8",
-    "prismjs": "^1.27.0",
+    "prismjs": "^1.28.0",
     "sass": "^1.50.0",
     "sass-loader": "^10.2.1"
   },
