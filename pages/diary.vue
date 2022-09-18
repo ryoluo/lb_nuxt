@@ -24,6 +24,7 @@ export default {
     markedInstance() {
       const renderer = new Renderer()
       renderer.link = (href, title, text) => `<a target="_blank" href="${href}" title="${href}">${text}</a>`
+      renderer.image = (href, title, text) => `<img src="${href}" alt="${text}" class="top" />`
       // eslint-disable-next-line new-cap
       return new marked.setOptions({
         langPrefix: 'language-',
