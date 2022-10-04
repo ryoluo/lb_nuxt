@@ -204,6 +204,10 @@ article {
   &.fade2 {
     animation: update-article2 0.5s ease 0s 1 normal;
   }
+  .jcsb {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 @keyframes update-article1 {
   0% {
