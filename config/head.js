@@ -42,6 +42,11 @@ export default {
 
                     gtag('config', 'G-W9KELVBTN2');`,
         },
+        {
+          async: true,
+          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5787109833449075',
+          crossorigin: 'anonymous',
+        },
       ],
   __dangerouslyDisableSanitizersByTagID: {
     gtag: ['innerHTML'],
