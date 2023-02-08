@@ -47,9 +47,15 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxt/http',
     '@nuxtjs/axios',
-    '@nuxtjs/google-analytics',
     '@nuxtjs/sitemap',
     '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/google-adsense',
+      {
+        id: 'pub-5787109833449075',
+        test: isLocal,
+      },
+    ],
   ],
 
   router: {},
@@ -58,10 +64,6 @@ export default {
   axios: { proxy: true },
   proxy: { '/api/': proxyURL },
   http: { proxyURL },
-  googleAnalytics: {
-    id: 'UA-142986852-1',
-    dev: isLocal,
-  },
   sitemap: {
     exclude: ['/open/*'],
     hostname: baseURL,
