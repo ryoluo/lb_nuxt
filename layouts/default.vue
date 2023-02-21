@@ -2,7 +2,6 @@
   <div>
     <Header />
     <Nuxt class="view" />
-    <adsbygoogle ad-slot="1732020500" :ad-style="{ display: 'block', margin: 'auto' }" />
     <Footer />
   </div>
 </template>

@@ -49,13 +49,6 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/style-resources',
-    [
-      '@nuxtjs/google-adsense',
-      {
-        id: 'pub-5787109833449075',
-        test: isLocal,
-      },
-    ],
   ],
 
   router: {},
