@@ -9,6 +9,7 @@ export default {
   generate: {
     fallback: true,
     routes,
+    exclude: ['/contact', '/works'],
   },
 
   publicRuntimeConfig: { baseURL },
