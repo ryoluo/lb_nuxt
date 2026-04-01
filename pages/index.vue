@@ -108,7 +108,6 @@ export default {
       width: fit-content;
       margin-top: 55px;
       margin-right: 20px;
-      padding-bottom: 72px;
       width: 600px;
       box-sizing: border-box;
     }
