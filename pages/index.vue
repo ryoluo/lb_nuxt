@@ -1,27 +1,22 @@
 <template>
   <div id="home" :class="[lang, { fadein: fadein }]">
-    <div class="lang-wrapper">
-      <div class="lang" @click="toggleLang">
-        <p class="text">{{ text['lang'][lang] }}</p>
-      </div>
-    </div>
     <div class="flex">
       <div class="section">
         <div class="catch-copy-wrapper">
-          <h2 class="catch-copy">{{ text['music'][lang] }}</h2>
-          <h2 class="catch-copy">{{ text['vietnam'][lang] }}</h2>
-          <h2 class="catch-copy">{{ text['technology'][lang] }}</h2>
-          <h2 class="catch-copy last">{{ text['and'][lang] }}</h2>
+          <h2 class="catch-copy">Thoughts on</h2>
+          <h2 class="catch-copy">Technology,</h2>
+          <h2 class="catch-copy">Society,</h2>
+          <h2 class="catch-copy">and the World.</h2>
         </div>
       </div>
       <div class="section">
         <div class="intro">
           <div class="flex-wrapper">
             <div class="border"></div>
-            <h3 class="header3">{{ text['greeting'][lang] }}</h3>
+            <h3 class="header3">Hi! I'm Ryo Kobayashi.</h3>
           </div>
-          <h4 class="header">{{ text['work'][lang] }}</h4>
-          <h4 class="header last">{{ text['website'][lang] }}</h4>
+          <h4 class="header">I'm a software engineer working at Tokyo, Japan.</h4>
+          <h4 class="header last">Here is my official website, discover more from menu button above!</h4>
         </div>
       </div>
     </div>
@@ -29,60 +24,10 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      lang: 'en',
-      fadein: false,
-      text: {
-        lang: {
-          en: 'Tiếng Việt',
-          vn: 'Enligsh',
-        },
-        music: {
-          en: 'Music,',
-          vn: 'Âm nhạc,',
-        },
-        vietnam: {
-          en: 'Vietnam,',
-          vn: 'Việt Nam,',
-        },
-        technology: {
-          en: 'Technology,',
-          vn: 'Kỹ thuật,',
-        },
-        and: {
-          en: 'and Many Good Things.',
-          vn: 'Và những điều tốt đẹp.',
-        },
-        greeting: {
-          en: "Hi! I'm Ryo Kobayashi.",
-          vn: 'Xin chào! Tôi là Ryo Kobayashi.',
-        },
-        work: {
-          en: "I'm a software engineer working at Tokyo, Japan.",
-          vn: 'Tôi là kỹ sư phần mềm ở Tokyo, Nhật Bản.',
-        },
-        website: {
-          en: 'Here is my official website, discover more from menu button above!',
-          vn: 'Đây là trang web chính thức của tôi, hãy xem thêm từ nút menu bên trên!',
-        },
-      },
-    }
-  },
   head() {
     return {
       meta: [{ hid: 'og:type', property: 'og:type', content: 'website' }],
     }
-  },
-  methods: {
-    toggleLang() {
-      this.fadein = true
-      if (this.lang === 'en') {
-        this.lang = 'vn'
-      } else {
-        this.lang = 'en'
-      }
-    },
   },
 }
 </script>
@@ -92,12 +37,7 @@ export default {
   box-sizing: border-box;
 
   .flex {
-    min-height: calc(100vh - 150px - 52px);
-
-    @include pc {
-      min-height: calc(100vh - 150px - 38px);
-    }
-
+    min-height: calc(100vh - 150px);
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
@@ -155,37 +95,6 @@ export default {
         margin-top: 20px;
         margin-left: 20px;
       }
-    }
-  }
-
-  .lang-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .lang {
-    font-family: $josefin;
-    padding: 6px 9px 1px 11px;
-    width: 105px;
-    text-align: center;
-    margin-top: 0;
-    color: $text-color-normal;
-    border-bottom: 1px solid $text-color-muted;
-    margin-bottom: 16px;
-
-    @include pc {
-      text-align: center;
-      font-size: 18px;
-      padding: 6px 12px 0 12px;
-      margin-bottom: 0;
-    }
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    .text {
-      margin: 0;
     }
   }
 
@@ -256,46 +165,6 @@ export default {
       width: 75%;
       background-image: $theme-gradation-green;
     }
-  }
-}
-
-.vn.fadein {
-
-  p,
-  h2,
-  h3,
-  h4 {
-    animation: update-article1 1s ease 0s 1 normal;
-  }
-}
-
-.en.fadein {
-
-  p,
-  h2,
-  h3,
-  h4 {
-    animation: update-article2 1s ease 0s 1 normal;
-  }
-}
-
-@keyframes update-article1 {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes update-article2 {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
 </style>
